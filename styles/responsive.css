@@ -1,8 +1,16 @@
 /* 반응형 조건 responsive */
 /* m(320~) -> t(1024~) -> d(1250~) */
+@media screen and (min-width:550px) {
+    #wrap .container {
+        flex-flow: row nowrap;
+    }
+    #wrap .quiz.bg .quiz_frm {width: 200px;}
+    #wrap .quiz.bg .situation {flex:1;}
+}
 @media screen and (min-width:860px) {
     #wrap .intro {padding: 300px 0 100px;}
-}/* 860~1023 */
+}
+/* 860~1023 */
 @media screen and (min-width:1024px) {
     #wrap .intro {padding: 410px 0 100px;}
     #wrap .intro .logo {width: 32px; left: 36px; top:30px;}

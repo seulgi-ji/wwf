@@ -43,6 +43,88 @@
 #wrap .intro h1 span:nth-child(2) {}
 
 /* ===============================================================2행 시작==================================================== */
+#wrap .quiz_bg {
+    background-image: url(../images/quiz_bg.png) ;
+    padding: 70px;
+    background-size: cover;
+    background-position: center;
+}
+#wrap .quiz_bg .contents {
+    display: flex;
+    flex-flow: column nowrap;
+}
+#wrap .quiz_bg .contents > * {}
+#wrap .quiz_bg .contents .quiz_title {
+    margin-bottom: 16px;
+}
+#wrap .quiz_bg .contents .quiz_title h1 {
+    font-size: 1.50rem;
+    font-weight: 500;
+    line-height: 1.2;
+    letter-spacing: -0.01rem;
+    color: #fff;
+    margin-bottom: 16px;
+}
+#wrap .quiz_bg .contents .quiz_title h2 {
+}
+#wrap .quiz_bg .contents .quiz_title h2 span {
+    display: block;
+    color: #fff;
+}
+#wrap .quiz_bg .contents .quiz_title h2 span:nth-child(1) {}
+#wrap .quiz_bg .contents .quiz_title h2 span:nth-child(2) {}
+#wrap .quiz_bg .contents .quiz_frm {margin-bottom: 50px;}
+#wrap .quiz_bg .contents .quiz_frm ol {}
+#wrap .quiz_bg .contents .quiz_frm ol li {
+    margin-bottom: 16px;
+    background: #FF7300;
+}
+#wrap .quiz_bg .contents .quiz_frm ol li {
+}
+#wrap .quiz_bg .contents .quiz_frm ol li:last-child {}
+#wrap .quiz_bg .contents .quiz_frm ol li input {display: none;}
+#wrap .quiz_bg .contents .quiz_frm ol li input:checked + label {
+    background-image: url(../images/check_on.svg); }
+#wrap .quiz_bg .contents .quiz_frm ol li label {
+    display: block;
+    font-size: 0.88rem; 
+    color: #fff;
+    padding-left: 47.75px;
+    background-image: url(../images/check_off.svg);
+    background-size: 16.5px;
+    background-repeat: no-repeat;
+    line-height: 1.2;
+}
+#wrap .quiz_bg .contents .quiz_frm ol li:hover::after {}
+#wrap .quiz_bg .contents .quiz_frm #correct_btn {
+    background: #000;
+    width: 100%;
+    padding: 10px;
+    border-radius: 50px;
+}
+#wrap .quiz_bg .contents .quiz_frm #correct_btn:hover {
+    background: #FF7300;
+}
+#wrap .quiz_bg .contents .quiz_frm #correct_btn span {
+    display:block;
+    color: #fff;
+    font-size: 1.0rem;
+    font-weight: 400;
+}
+#wrap .quiz_bg .contents .situation {
+    width: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 20px;
+}
+#wrap .quiz_bg .contents .situation p {}
+#wrap .quiz_bg .contents .situation p img {width: 100%;}
+#wrap .quiz_bg .contents .situation span {
+    display: block;
+    color: #fff;
+    font-size: 1.25rem;
+    text-align: center;
+}
 /* ===============================================================3행 시작==================================================== */
 /* ===============================================================4행 시작==================================================== */
 /* ===============================================================5행 시작==================================================== */

@@ -6,6 +6,7 @@
 #wrap .container {
     min-width: 320px;
 }
+#wrap .container .contents {max-width: 1250px; margin: 0 auto;}
 /* mobile design - .sponsor_btn */
 #wrap .container .sponsor_btn {
     display: block;
