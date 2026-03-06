@@ -1,5 +1,5 @@
 /* index. css */
-/* ===============================================================1행 시작==================================================== */
+/* ===============================================================1행 캠페인 표지 (m)==================================================== */
 #wrap .intro {
     /* 북극곰 배경 bg1 */
     /* 배경 이미지 속성 사용시 background 다른 배경 추가 속성도 생각하기 */
@@ -46,8 +46,6 @@
 #wrap .quiz_bg {
     background-image: url(../images/quiz_bg.png) ;
     padding: 70px;
-    background-size: cover;
-    background-position: center;
 }
 #wrap .quiz_bg .contents {
     display: flex;
@@ -77,7 +75,6 @@
 #wrap .quiz_bg .contents .quiz_frm ol {}
 #wrap .quiz_bg .contents .quiz_frm ol li {
     margin-bottom: 16px;
-    background: #FF7300;
 }
 #wrap .quiz_bg .contents .quiz_frm ol li {
 }
@@ -126,10 +123,178 @@
     text-align: center;
 }
 /* ===============================================================3행 시작==================================================== */
+#wrap .video_bg {
+    background-image: url(../images/video_bg.png);
+}
+#wrap .video_bg .video h1 {
+    text-align: center;
+}
+#wrap .video_bg .video .video_link iframe{
+    width: 100%;
+    margin: 0 0 70px;
+}
 /* ===============================================================4행 시작==================================================== */
+#wrap .reduction_bg {
+    background-image: url(../images/reduction_bg.png);
+    padding: 50px 15px;
+}
+#wrap .reduction_bg .reduction h1 {
+    color: #fff;
+    margin: 0 0 22px;
+}
+#wrap .reduction_bg .reduction h1+p {
+    color: #fff;
+    margin: 0 0 22px;
+}
+#wrap .reduction_bg .reduction p img {width: 100%;}
 /* ===============================================================5행 시작==================================================== */
+#wrap .disaster_bg {
+    background: #f5f5f5;
+}
+#wrap .disaster_bg .disaster h1 {
+    text-align: center;
+}
+#wrap .disaster_bg .disaster h1+p {
+    text-align: center;
+}
+#wrap .disaster_bg .disaster .content_list {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 20px;
+}
+#wrap .disaster_bg .disaster .content_list li {}
+#wrap .disaster_bg .disaster .content_list li dl {
+    padding: 48px;
+    width: 100%;
+    position: relative;
+}
+#wrap .disaster_bg .disaster .content_list li dl * {
+    position: relative; color: #fff; z-index: 10;
+    text-align: center;
+}
+#wrap .disaster_bg .disaster .content_list li:nth-child(1) dl {
+    background-image: url(../images/warming_28cm.png);
+    background-size: cover; background-position: center;
+}
+#wrap .disaster_bg .disaster .content_list li:nth-child(2) dl {
+    background-image: url(../images/warming_27cm.png);
+    background-size: cover; background-position: center;
+}
+#wrap .disaster_bg .disaster .content_list li:nth-child(3) dl {
+    background-image: url(../images/wwf.jpg);
+    background-size: cover; background-position: center;
+}
+#wrap .disaster_bg .disaster .content_list li dl::before {
+    content: ''; display: block; width: 100%; height: 100%;
+    position: absolute; left: 0; top: 0; z-index: 9; background: linear-gradient(rgba(0,0,0,0.9),transparent);
+}
+#wrap .disaster_bg .disaster .content_list li dl dt {
+    font-size: 1.38rem;
+    font-weight: 500;
+    line-height: 1.2;
+    letter-spacing: 0.06rem;
+    margin: 0 0 11px;
+}
+#wrap .disaster_bg .disaster .content_list li dl dd {
+    font-size: 1.00rem;
+    font-weight: 400;
+    line-height: 1.7;
+}
+#wrap .disaster_bg .disaster .content_list li .txt {
+    padding: 20px;
+    background: #fff;
+}
+#wrap .disaster_bg .disaster .content_list li .txt p {
+    font-size: 0.81rem;
+    line-height: 1.7;
+    text-align: center;
+}
 /* ===============================================================6행 시작==================================================== */
+#wrap .crisis_bg {
+    background-image: url(../images/reduction_bg.png);
+}
+#wrap .crisis_bg .crisis {
+    display: flex;
+    flex-flow: column nowrap;
+}
+#wrap .crisis_bg .crisis h1 {
+    color: #fff;
+    margin: 0 0 22px;
+}
+#wrap .crisis_bg .crisis p {
+    color: #fff;
+    margin: 0 0 22px;
+}
+#wrap .crisis_bg .crisis .crisis_img img {width: 100%;}
 /* ===============================================================7행 시작==================================================== */
+#wrap .wwf_bg {
+    background-image: url(../images/wwf.jpg) ;
+    background-size: cover; background-position: center;
+    position: relative;
+}
+#wrap .wwf_bg::before {
+    position: absolute; content: ''; display: block;
+    width: 100%; height: 100%; left: 0; top: 0;
+    background: rgba(255, 255, 255, 0.7); z-index: 9 ;
+}
+#wrap .wwf_bg .wwf {
+    text-align: center;
+    position: relative; z-index: 10; 
+}
+#wrap .wwf_bg .wwf > * {text-align: center;}
+#wrap .wwf_bg .wwf h1 {font-size: 1.88rem;}
+#wrap .wwf_bg .wwf p,
+#wrap .wwf_bg .wwf p+p {font-size: 0.81rem;}
 /* ===============================================================8행 시작==================================================== */
+#wrap .campaign_bg {
+    background: #f5f5f5;
+}
+#wrap .campaign_bg .campaign {} 
+#wrap .campaign_bg .campaign h1 {} 
+#wrap .campaign_bg .campaign .details {
+    display: grid;
+    gap: 20px;
+    grid-template-areas:
+    'public'
+    'corporation'
+    'nature';
+} 
+#wrap .campaign_bg .campaign .details li {
+    background-size: cover ; background-position: bottom center;
+    padding-top: 94px;
+}
+#wrap .campaign_bg .campaign .details li:nth-child(1) {
+    grid-area: public; /* 대중-grid 2차원 정렬을 위한 자식 이름 짓기 */
+    background-image: url(../images/warming_332.png) ;
+}
+#wrap .campaign_bg .campaign .details li:nth-child(2) {
+    grid-area: corporation; 
+    background-image: url(../images/wwf.jpg) ;
+}
+#wrap .campaign_bg .campaign .details li:nth-child(3) {
+    grid-area: nature; 
+    background-image: url(../images/reduction.png) ;
+}
+#wrap .campaign_bg .campaign .details li .txt {
+    padding: 20px;
+    background:rgba(0,0,0,0.5)
+}
+#wrap .campaign_bg .campaign .details li .txt > * {
+    color: #fff;
+    line-height: 1.2;
+
+}
+#wrap .campaign_bg .campaign .details li .txt dt {
+    font-size: 1.38rem;
+    font-weight: 500;
+    margin-bottom: 18px;
+}
+#wrap .campaign_bg .campaign .details li .txt dd {
+    font-size: 0.81rem;
+    line-height: 1.7;
+    letter-spacing: -0.13rem;
+}
 /* ===============================================================9행 시작==================================================== */
+#wrap .activity_bg {}
 /* ===============================================================10행 시작==================================================== */
+#wrap .sponsor_bg {}
