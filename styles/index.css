@@ -1,300 +1,218 @@
-/* index. css */
-/* ===============================================================1행 캠페인 표지 (m)==================================================== */
-#wrap .intro {
-    /* 북극곰 배경 bg1 */
-    /* 배경 이미지 속성 사용시 background 다른 배경 추가 속성도 생각하기 */
-    padding: 100px 15px;
-    background-image: url(../images/bg1.png) ;
-    background-size: 170%;
-    background-position: center bottom;
-    position: relative;
+/* =================================1행 캠페인 표지(m) */
+#wrap .intro {/* 북극곰배경 bg1.png */
+    padding:100px 0;
+    background-image:url(../images/bg1.png); /* 배경이미지 속성 사용시 다른 background-로 시작하는 배경추가속성도 생각하기 */
+    background-size:auto 130%; background-position:center bottom;
+    position:relative;
 }
-#wrap .intro > * {
-    position: relative;
-    z-index: 100;
-}
-#wrap .intro::after {
-    /* 북금곰 배경위에 깔리는 반투명한 검은색 배경 rgba() */
-    /* 가상 요소 before, after의 필수 속성이 뭔지 먼저 생각하기 */
-    content: ''; display: block;
-    background: linear-gradient(transparent, #000 69%);
-    width: 100%; height: 100%;
-    opacity: 0.6;
-    position: absolute; left: 0; top: 0;
-    z-index: 90;
+#wrap .intro > * {position:relative; z-index:100;}
+#wrap .intro::after {/* 북극곰배경 위에 깔리는 반투명한 검은색배경 rgba() */
+    /* 가상요소 before, after(자식)의 필수속성이 뭔지 먼저 생각하기 */
+    content:''; display:block;
+    background:linear-gradient(transparent, #000 69%); opacity:0.6;
+    width:100%; height:100%;
+    position:absolute; left:0; top:0; z-index:90; /* p,h1,a(형제들)와 겹침효과를 줄 수 있는 CSS 속성 생각하기 */
 }
 #wrap .intro .logo {
-    width: 24px;
-    position: absolute; left: 21px; top: 18px;/* 피그마 무시과 동일 absolute */
+    width:24px; /* w,h 중 한가지값만 작성(나머지는 자동비율조정) */
+    position:absolute; /* 피그마 무시기능과 동일 absolute */
+    left:21px; top:18px;
 }
-#wrap .intro .logo img {width: 100%;}/* 이미지 w100% 설정 후, 위치 따라가게 하는 개념 체크 */
-#wrap .intro h1 {
-    text-align: center;
-    margin: 0 0 50px;
-}
+#wrap .intro .logo img {width:100%;}/*이미지는w100%설정후부모크기,위치따라가게하는개념체크*/
+#wrap .intro h1 {text-align:center; margin:0 0 50px;}
 #wrap .intro h1 span {
-    display: block;
-    color: #fff;
-    font-weight: 500;
-    font-size: 1.88rem;
-    line-height: 1.3;
+    color:#fff; display:block;
+    font-size:1.88rem; line-height:1.3; font-weight:500;
 }
 #wrap .intro h1 span:nth-child(1) {}
 #wrap .intro h1 span:nth-child(2) {}
-
-/* ===============================================================2행 시작==================================================== */
+#wrap .intro .sponsor_btn {}
+/* ================================================2행 퀴즈(m) */
 #wrap .quiz_bg {
-    background-image: url(../images/quiz_bg.png) ;
-    padding: 70px;
+    background-image: url(../images/reduction_bg.png);
+    padding:70px;
 }
-#wrap .quiz_bg .contents {
-    display: flex;
-    flex-flow: column nowrap;
+#wrap .quiz_bg .quiz {
+    display:flex; flex-flow:column nowrap;/* t, d column -> row */
+    gap:50px;
 }
-#wrap .quiz_bg .contents > * {}
-#wrap .quiz_bg .contents .quiz_title {
-    margin-bottom: 16px;
+#wrap .quiz_bg .quiz .quiz_list {/* margin:0 0 50px; */}
+#wrap .quiz_bg .quiz .quiz_list > * {margin:0 0 16px;}
+#wrap .quiz_bg .quiz .quiz_list h1 {
+    font-size:1.5rem; line-height:1.2; color:#fff;
+    letter-spacing: -0.01rem; font-weight:500;
+    font-family:'Noto Sans KR', sans-serif;/* 단독글꼴일경우 */
 }
-#wrap .quiz_bg .contents .quiz_title h1 {
-    font-size: 1.50rem;
-    font-weight: 500;
-    line-height: 1.2;
-    letter-spacing: -0.01rem;
-    color: #fff;
-    margin-bottom: 16px;
+#wrap .quiz_bg .quiz .quiz_list h2 {}
+#wrap .quiz_bg .quiz .quiz_list h2 span {
+    display:block; line-height:1.7; color:#fff;
 }
-#wrap .quiz_bg .contents .quiz_title h2 {
+#wrap .quiz_bg .quiz .quiz_list h2 span:nth-child(1) {}
+#wrap .quiz_bg .quiz .quiz_list h2 span:nth-child(2) {}
+#wrap .quiz_bg .quiz .quiz_list #quiz_frm {margin:0;}
+#wrap .quiz_bg .quiz .quiz_list #quiz_frm ul {margin:0 0 16px;}
+#wrap .quiz_bg .quiz .quiz_list #quiz_frm ul li {position:relative; margin:0 0 16px;}
+#wrap .quiz_bg .quiz .quiz_list #quiz_frm ul li:last-child {margin:0;}
+#wrap .quiz_bg .quiz .quiz_list #quiz_frm ul li input {display:none;}
+#wrap .quiz_bg .quiz .quiz_list #quiz_frm ul li input:checked + label  {
+    background-image:url(../images/check_on.svg);
 }
-#wrap .quiz_bg .contents .quiz_title h2 span {
-    display: block;
-    color: #fff;
+#wrap .quiz_bg .quiz .quiz_list #quiz_frm ul li label {
+    color:#fff; font-size:0.88rem; /* line-height:1.7; */
+    background-image:url(../images/check_off.svg);
+    background-size:16px; background-repeat:no-repeat;
+    padding-left:47.75px;
 }
-#wrap .quiz_bg .contents .quiz_title h2 span:nth-child(1) {}
-#wrap .quiz_bg .contents .quiz_title h2 span:nth-child(2) {}
-#wrap .quiz_bg .contents .quiz_frm {margin-bottom: 50px;}
-#wrap .quiz_bg .contents .quiz_frm ol {}
-#wrap .quiz_bg .contents .quiz_frm ol li {
-    margin-bottom: 16px;
+#wrap .quiz_bg .quiz .quiz_list #quiz_frm ul li:hover::after {
+    content:''; display:block; position:absolute; left:0; bottom:-10px; 
+    width:100%; height:2px; background:linear-gradient(90deg, #ff7300, transparent)
 }
-#wrap .quiz_bg .contents .quiz_frm ol li {
+#wrap .quiz_bg .quiz .quiz_list #quiz_frm ul li:hover label {color:#ff7300;}
+#wrap .quiz_bg .quiz .quiz_list #quiz_frm #answer_btn {
+    background:#050505; color:#fff; line-height:1.7;
+    padding:10px; border-radius:50px; width:100%; transition:background 0.3s;
 }
-#wrap .quiz_bg .contents .quiz_frm ol li:last-child {}
-#wrap .quiz_bg .contents .quiz_frm ol li input {display: none;}
-#wrap .quiz_bg .contents .quiz_frm ol li input:checked + label {
-    background-image: url(../images/check_on.svg); }
-#wrap .quiz_bg .contents .quiz_frm ol li label {
-    display: block;
-    font-size: 0.88rem; 
-    color: #fff;
-    padding-left: 47.75px;
-    background-image: url(../images/check_off.svg);
-    background-size: 16.5px;
-    background-repeat: no-repeat;
-    line-height: 1.2;
+#wrap .quiz_bg .quiz .quiz_list #quiz_frm #answer_btn:hover {background:#ff7300;}
+#wrap .quiz_bg .quiz .quiz_status {}
+#wrap .quiz_bg .quiz .quiz_status img {width:100%;}
+#wrap .quiz_bg .quiz .quiz_status p {
+    line-height:1.7; color:#fff; font-size:1.25rem; margin:20px 0 0;
 }
-#wrap .quiz_bg .contents .quiz_frm ol li:hover::after {}
-#wrap .quiz_bg .contents .quiz_frm #correct_btn {
-    background: #000;
-    width: 100%;
-    padding: 10px;
-    border-radius: 50px;
-}
-#wrap .quiz_bg .contents .quiz_frm #correct_btn:hover {
-    background: #FF7300;
-}
-#wrap .quiz_bg .contents .quiz_frm #correct_btn span {
-    display:block;
-    color: #fff;
-    font-size: 1.0rem;
-    font-weight: 400;
-}
-#wrap .quiz_bg .contents .situation {
-    width: 100%;
-    display: flex;
-    flex-flow: column nowrap;
-    gap: 20px;
-}
-#wrap .quiz_bg .contents .situation p {}
-#wrap .quiz_bg .contents .situation p img {width: 100%;}
-#wrap .quiz_bg .contents .situation span {
-    display: block;
-    color: #fff;
-    font-size: 1.25rem;
-    text-align: center;
-}
-/* ===============================================================3행 시작==================================================== */
+/* ============================================================3 */
 #wrap .video_bg {
-    background-image: url(../images/video_bg.png);
+    background-image:url(../images/video_bg.png);
+    padding:50px 15px;
 }
-#wrap .video_bg .video h1 {
-    text-align: center;
-}
-#wrap .video_bg .video .video_link iframe{
-    width: 100%;
-    margin: 0 0 70px;
-}
-/* ===============================================================4행 시작==================================================== */
+#wrap .video_bg .video h1 {text-align:center;}
+#wrap .video_bg .video iframe {width:100%; margin:0 0 70px;}
+/* ============================================================4 */
 #wrap .reduction_bg {
-    background-image: url(../images/reduction_bg.png);
-    padding: 50px 15px;
+    background-image:url(../images/reduction_bg.png);
 }
-#wrap .reduction_bg .reduction h1 {
-    color: #fff;
-    margin: 0 0 22px;
+#wrap .reduction_bg .reduction h1 {color:#fff;}
+#wrap .reduction_bg .reduction h1+p {color:#fff;}
+#wrap .reduction_bg .reduction p img {width:100%;}
+/* ============================================================5 */
+#wrap .humanity_bg {
+    background-color:#f5f5f5;
 }
-#wrap .reduction_bg .reduction h1+p {
-    color: #fff;
-    margin: 0 0 22px;
+#wrap .humanity_bg .humanity h1 {text-align: center;}
+#wrap .humanity_bg .humanity h1+p {text-align: center;}
+#wrap .humanity_bg .humanity .list {
+    display:flex; flex-flow:column nowrap; gap:20px;
+    /* display:grid; grid-template-rows:1fr 1fr 1fr; */
 }
-#wrap .reduction_bg .reduction p img {width: 100%;}
-/* ===============================================================5행 시작==================================================== */
-#wrap .disaster_bg {
-    background: #f5f5f5;
+#wrap .humanity_bg .humanity .list li dl {
+    background-size:cover; background-position:center;
+    padding:48px 0; text-align:center; position:relative;
 }
-#wrap .disaster_bg .disaster h1 {
-    text-align: center;
+#wrap .humanity_bg .humanity .list li dl * {
+    color:#fff; position:relative; z-index:10;
 }
-#wrap .disaster_bg .disaster h1+p {
-    text-align: center;
+#wrap .humanity_bg .humanity .list li:nth-child(1) dl {background-image:url(../images/warming_28cm.png);}
+#wrap .humanity_bg .humanity .list li:nth-child(2) dl {background-image:url(../images/warming_27cm.png);}
+#wrap .humanity_bg .humanity .list li:nth-child(3) dl {background-image:url(../images/wwf.jpg);}
+#wrap .humanity_bg .humanity .list li dl:before {
+    content:''; display:block; width:100%; height:100%;
+    position:absolute; left:0; top:0; z-index:9;
+    background:linear-gradient(rgba(0,0,0,0.9), transparent);
 }
-#wrap .disaster_bg .disaster .content_list {
-    display: flex;
-    flex-flow: column nowrap;
-    gap: 20px;
+#wrap .humanity_bg .humanity .list li dl dt {
+    font-size:1.38rem; margin:0 0 11px; line-height:1.2; font-weight:500;
 }
-#wrap .disaster_bg .disaster .content_list li {}
-#wrap .disaster_bg .disaster .content_list li dl {
-    padding: 48px;
-    width: 100%;
-    position: relative;
-}
-#wrap .disaster_bg .disaster .content_list li dl * {
-    position: relative; color: #fff; z-index: 10;
-    text-align: center;
-}
-#wrap .disaster_bg .disaster .content_list li:nth-child(1) dl {
-    background-image: url(../images/warming_28cm.png);
-    background-size: cover; background-position: center;
-}
-#wrap .disaster_bg .disaster .content_list li:nth-child(2) dl {
-    background-image: url(../images/warming_27cm.png);
-    background-size: cover; background-position: center;
-}
-#wrap .disaster_bg .disaster .content_list li:nth-child(3) dl {
-    background-image: url(../images/wwf.jpg);
-    background-size: cover; background-position: center;
-}
-#wrap .disaster_bg .disaster .content_list li dl::before {
-    content: ''; display: block; width: 100%; height: 100%;
-    position: absolute; left: 0; top: 0; z-index: 9; background: linear-gradient(rgba(0,0,0,0.9),transparent);
-}
-#wrap .disaster_bg .disaster .content_list li dl dt {
-    font-size: 1.38rem;
-    font-weight: 500;
-    line-height: 1.2;
-    letter-spacing: 0.06rem;
-    margin: 0 0 11px;
-}
-#wrap .disaster_bg .disaster .content_list li dl dd {
-    font-size: 1.00rem;
-    font-weight: 400;
-    line-height: 1.7;
-}
-#wrap .disaster_bg .disaster .content_list li .txt {
-    padding: 20px;
-    background: #fff;
-}
-#wrap .disaster_bg .disaster .content_list li .txt p {
-    font-size: 0.81rem;
-    line-height: 1.7;
-    text-align: center;
-}
-/* ===============================================================6행 시작==================================================== */
+#wrap .humanity_bg .humanity .list li dl dd {line-height:1.7;}
+#wrap .humanity_bg .humanity .list li .txt {background:#fff; padding:20px;}
+#wrap .humanity_bg .humanity .list li .txt p {text-align:center; line-height:1.7; font-size:0.81rem;}
+/* ============================================================6 */
 #wrap .crisis_bg {
-    background-image: url(../images/reduction_bg.png);
+    background-image:url(../images/reduction_bg.png);
 }
-#wrap .crisis_bg .crisis {
-    display: flex;
-    flex-flow: column nowrap;
-}
-#wrap .crisis_bg .crisis h1 {
-    color: #fff;
-    margin: 0 0 22px;
-}
-#wrap .crisis_bg .crisis p {
-    color: #fff;
-    margin: 0 0 22px;
-}
-#wrap .crisis_bg .crisis .crisis_img img {width: 100%;}
-/* ===============================================================7행 시작==================================================== */
+#wrap .crisis_bg .crisis h1 {color:#fff;}
+#wrap .crisis_bg .crisis h1+p {color:#fff;}
+#wrap .crisis_bg .crisis p img {width:100%;}
+/* -----------------------------------------------7행 */
 #wrap .wwf_bg {
-    background-image: url(../images/wwf.jpg) ;
-    background-size: cover; background-position: center;
-    position: relative;
+    background-image: url(../images/wwf.jpg);
+    position:relative;
 }
 #wrap .wwf_bg::before {
-    position: absolute; content: ''; display: block;
-    width: 100%; height: 100%; left: 0; top: 0;
-    background: rgba(255, 255, 255, 0.7); z-index: 9 ;
+    position:absolute; content:''; display:block;
+    width:100%; height:100%; left:0; top:0;
+    background:rgba(255,255,255,0.7); z-index:9;
 }
 #wrap .wwf_bg .wwf {
-    text-align: center;
-    position: relative; z-index: 10; 
+    position:relative; z-index:10; text-align:center;
 }
-#wrap .wwf_bg .wwf > * {text-align: center;}
-#wrap .wwf_bg .wwf h1 {font-size: 1.88rem;}
-#wrap .wwf_bg .wwf p,
-#wrap .wwf_bg .wwf p+p {font-size: 0.81rem;}
-/* ===============================================================8행 시작==================================================== */
-#wrap .campaign_bg {
-    background: #f5f5f5;
-}
-#wrap .campaign_bg .campaign {} 
-#wrap .campaign_bg .campaign h1 {} 
-#wrap .campaign_bg .campaign .details {
-    display: grid;
-    gap: 20px;
-    grid-template-areas:
-    'public'
-    'corporation'
-    'nature';
-} 
-#wrap .campaign_bg .campaign .details li {
-    background-size: cover ; background-position: bottom center;
-    padding-top: 94px;
-}
-#wrap .campaign_bg .campaign .details li:nth-child(1) {
-    grid-area: public; /* 대중-grid 2차원 정렬을 위한 자식 이름 짓기 */
-    background-image: url(../images/warming_332.png) ;
-}
-#wrap .campaign_bg .campaign .details li:nth-child(2) {
-    grid-area: corporation; 
-    background-image: url(../images/wwf.jpg) ;
-}
-#wrap .campaign_bg .campaign .details li:nth-child(3) {
-    grid-area: nature; 
-    background-image: url(../images/reduction.png) ;
-}
-#wrap .campaign_bg .campaign .details li .txt {
-    padding: 20px;
-    background:rgba(0,0,0,0.5)
-}
-#wrap .campaign_bg .campaign .details li .txt > * {
-    color: #fff;
-    line-height: 1.2;
-
-}
-#wrap .campaign_bg .campaign .details li .txt dt {
-    font-size: 1.38rem;
-    font-weight: 500;
-    margin-bottom: 18px;
-}
-#wrap .campaign_bg .campaign .details li .txt dd {
-    font-size: 0.81rem;
-    line-height: 1.7;
-    letter-spacing: -0.13rem;
-}
-/* ===============================================================9행 시작==================================================== */
+#wrap .wwf_bg .wwf h1 {}
+#wrap .wwf_bg .wwf p {}
+/* -----------------------------------------------8행 */
 #wrap .activity_bg {}
-/* ===============================================================10행 시작==================================================== */
-#wrap .sponsor_bg {}
+#wrap .activity_bg .activity {}
+#wrap .activity_bg .activity h1 {}
+#wrap .activity_bg .activity .details {
+    display:grid; gap:20px;
+    grid-template-areas:
+        'public'
+        'corporation'
+        'nature';
+}
+#wrap .activity_bg .activity .details li {
+    background-size:cover; background-position:center;
+    padding-top:94px;
+}
+#wrap .activity_bg .activity .details li:nth-child(1) {
+    grid-area:public;/* 대중-grid 2차원 정렬을 위한 자식 이름 짓기 */
+    background-image:url(../images/warming_28cm.png);
+}
+#wrap .activity_bg .activity .details li:nth-child(2) {
+    grid-area:corporation;/* 기업 */
+    background-image:url(../images/wwf.jpg);
+}
+#wrap .activity_bg .activity .details li:nth-child(3) {
+    grid-area:nature;/* 자연 */
+    background-image:url(../images/reduction.png);
+}
+#wrap .activity_bg .activity .details li .txt {
+    background-color:rgba(0,0,0,0.8);
+    padding:20px;
+}
+#wrap .activity_bg .activity .details li .txt * {color:#fff;}
+#wrap .activity_bg .activity .details li .txt dt {margin-bottom:18px;}
+#wrap .activity_bg .activity .details li .txt dd {}
+/* -----------------------------------------------9행 감사선물 */
+#wrap .gift_bg {
+    background-image:url(../images/reduction_bg.png);
+}
+#wrap .gift_bg .gift {text-align:center;}
+#wrap .gift_bg .gift .title {display:flex; flex-flow:column nowrap; padding-bottom: 20px;}
+#wrap .gift_bg .gift .title h1 {text-align:left; color:#fff;}
+#wrap .gift_bg .gift .title .sponsor_btn {margin: 0;}
+#wrap .gift_bg .gift .title .sponsor_btn em {}
+#wrap .gift_bg .gift .gift_list {
+    display:grid; gap:20px;
+    grid-template-areas:
+        'sponser2'
+        'sponser3'
+        'sponser4';
+}
+#wrap .gift_bg .gift .gift_list li {}
+#wrap .gift_bg .gift .gift_list li:nth-child(1) {grid-area:sponser2;}
+#wrap .gift_bg .gift .gift_list li:nth-child(2) {grid-area:sponser3;}
+#wrap .gift_bg .gift .gift_list li:nth-child(3) {grid-area:sponser4;}
+#wrap .gift_bg .gift .gift_list li:nth-child(1) .photo {background-image: url(../images/freebie1.jpg);}
+#wrap .gift_bg .gift .gift_list li:nth-child(2) .photo {background-image: url(../images/freebie2.jpg);}
+#wrap .gift_bg .gift .gift_list li:nth-child(3) .photo {background-image: url(../images/freebie3.jpg);}
+#wrap .gift_bg .gift .gift_list li .photo {
+    height:150px; overflow:hidden;
+    background-size:cover; background-position: center;
+}
+#wrap .gift_bg .gift .gift_list li .photo img {width:100%; transform:translateY(-100px);}/* 1열 */
+#wrap .gift_bg .gift .gift_list li h2 {margin-top:13px;}
+#wrap .gift_bg .gift .gift_list li h2+p {}
+#wrap .gift_bg .gift .gift_list li h2,
+#wrap .gift_bg .gift .gift_list li h2+p {text-align:center; color:#fff;}
+#wrap .gift_bg .gift .info {
+    background-color:#fff; color:#050505;
+    display:inline-block;
+}
+/* -----------------------------------------------10행 결제 안내 */

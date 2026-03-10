@@ -1,36 +1,20 @@
-/* 공통 common. css */
-#wrap {
-    margin: 0 auto;
-}
-#wrap * {transition: all 0.3s;}
+/* 공통 common.css */
+#wrap {}
+#wrap * {transition:all 0.3s;}
 #wrap .container {
-    min-width: 320px;
-    background-size: cover;
-    background-position: center;
-    padding: 70px 15px; 
+    min-width:320px;
+    background-size:cover; background-position:center;
+    padding:70px 15px;
 }
-#wrap .container .contents {max-width: 1250px; margin: 0 auto;}
+#wrap .container .contents {max-width:1250px; margin:0 auto;}
 #wrap .container .contents h1 {
-    font-size: 1.38rem;
-    font-weight: 500;
-    line-height: 1.2;
-    letter-spacing: -0.06px;
-    margin: 0 0 40px;
+    font-size:1.38rem; font-weight:500; line-height:1.2; margin:0 0 40px;
 }
 #wrap .container .contents h1 .highlight {
-    background: #fff;
-    color: #000;
-    font-size: 1.38rem;
-    font-weight: 500;
-    line-height: 1.2;
-    letter-spacing: -0.06px;
+    background-color:#fff; color:#050505; font-weight:500;
 }
 #wrap .container .contents h1+p {
-    font-size: 0.81rem;
-    font-weight: 400;
-    line-height: 1.7;
-    letter-spacing: -0.13rem;
-    margin: 0 0 22px;
+    font-size:0.81rem; line-height:1.7; font-weight:500; margin:0 0 22px;
 }
 /* mobile design - .sponsor_btn */
 #wrap .container .sponsor_btn {
@@ -52,16 +36,18 @@
     animation: x4 0.4s linear alternate infinite;
 }
 #wrap .container .sponsor_btn::after {
-    content: '>'; display: block;
-    color: #fff;
-    font-size: 0.75rem;
+    content:'>'; display:block; 
+    color:#fff; font-size:0.75rem;
+    transition:font-weight 0.3s;
 }
 #wrap .container .sponsor_btn em {
-    color: #fff;
-    font-size: 1.0rem;
-    font-weight: 500;
+    color:#fff; font-weight:500;
+}
+#wrap .container .sponsor_btn:hover::after {
+    animation:x4 0.4s linear alternate infinite;
+    font-weight:600; 
 }
 @keyframes x4 {
-    0% {transform: translateX(0);}
-    100% {transform: translateX(4px);}
+    0% {transform:translateX(0);}
+    100% {transform:translateX(4px);}
 }

@@ -1,65 +1,80 @@
-/* 반응형 조건 responsive */
+/* 반응형조건 responsive */
 /* m(320~) -> t(1024~) -> d(1250~) */
 @media screen and (min-width:550px) {
-    #wrap .container {
-        flex-flow: row nowrap;
-    }
-    #wrap .quiz.bg .quiz_frm {width: 200px;}
-    #wrap .quiz.bg .situation {flex:1;}
+    /* ----------------------------------------------2행 퀴즈 */
+    #wrap .quiz_bg .quiz {flex-flow:row nowrap;}
+    #wrap .quiz_bg .quiz .quiz_list {width:200px;}
+    #wrap .quiz_bg .quiz .quiz_status {flex:1;}
 }
 @media screen and (min-width:860px) {
-    #wrap .intro {padding: 300px 0 100px;}
-    /* ========================3행 6행 공통==================================== */
-    #wrap .container {padding: 200px 80px;}
-    #wrap .container .contents h1 {font-size: 2.5rem; margin: 0 0 40px;}
-    #wrap .container .contents h1+p {font-size: 1.38rem;}
-    #wrap .container .contents h1 .highlight {font-size: 2.5rem;}
-    /* ========================3행============================================ */
-    #wrap .video_bg .video h1 {margin: 0 0 70px;}
-    #wrap .video_bg .video .video_link iframe {height: 484px;}
-    /* ========================5행============================================ */
-    #wrap .disaster_bg .disaster .content_list {flex-flow: row nowrap;}
-    #wrap .disaster_bg .disaster .content_list li {flex:1;}
-    #wrap .disaster_bg .disaster .content_list li dl dt {font-size: 2.69rem}
-    #wrap .disaster_bg .disaster .content_list li dl {height: 320px;}
-    #wrap .disaster_bg .disaster .content_list li .txt {height: 250px;}
-    #wrap .disaster_bg .disaster .content_list li .txt p {font-size: 1rem;}
-}
-/* 860~1023 */
-@media screen and (min-width:1024px) {
-    #wrap .intro {padding: 410px 0 100px;}
-    #wrap .intro .logo {width: 32px; left: 36px; top:30px;}
-    #wrap .intro .logo h1 {margin: 0 0 100px;}
-    #wrap .intro h1 span {font-size: 3.13rem; font-weight: 600;}
-    #wrap .container .sponsor_btn {width: 238px; height: 60px;}
-    #wrap .container .sponsor_btn em {font-size: 1.38rem;}
-    #wrap .container .sponsor_btn::after  {font-size: 1rem;}
-    /*========================== 8행======================================================== */
-    #wrap .campaign_bg .campaign .details {
-        grid-template-areas:
-        'public nature'
-        'corporation nature';
+    #wrap .intro {padding:300px 0 100px;}
+    /* -------------------------------------------3행~6행 공통 */
+    #wrap .container {padding:200px 80px;}
+    #wrap .container .contents h1 {font-size:2.5rem; margin:0 0 40px;}
+    #wrap .container .contents h1+p {font-size:1.38rem;}
+    /* -------------------------------------------3행 */
+    #wrap .video_bg .video h1 {margin:0 0 70px;}
+    #wrap .video_bg .video iframe {height:484px;}
+    /* -------------------------------------------5행 */
+    #wrap .humanity_bg .humanity .list {flex-flow:row nowrap;}
+    #wrap .humanity_bg .humanity .list li {flex:1;}
+    #wrap .humanity_bg .humanity .list li dl dt {font-size:2.69rem;}
+    #wrap .humanity_bg .humanity .list li .txt {height:250px;}
+    #wrap .humanity_bg .humanity .list li .txt p {font-size:1rem;}
+    /* -----------------------------------------9행 */
+    #wrap .gift_bg .gift .title {
+        flex-flow:row nowrap;
+        justify-content:space-between;
+        align-items:flex-end; margin:0 0 40px;
     }
-}/* 1024~1249 */
-@media screen and (min-width:1250px) {
-    #wrap .intro { padding: 447px 0 100px;}
-    #wrap .intro .logo {width: 42px; left: 61px; top: 53px;}
-    #wrap .intro h1 span {font-size: 4.38rem;}
-    #wrap .intro h1 span:nth-child(1) {font-weight: 400;}
-    #wrap .intro h1 span:nth-child(2) {font-weight: 700;}
-    #wrap .container .sponsor_btn {width: 409px ; height: 71px ;}
-    #wrap .container .sponsor_btn em {font-size: 2.13rem;}
-    #wrap .container .sponsor_btn::after {font-size: 2rem;}
-    /* ===================================8행================================================ */
-        #wrap .campaign_bg .campaign .details {
+    #wrap .gift_bg .gift .title h1 {margin:0;}
+    #wrap .gift_bg .gift .gift_list {
         grid-template-areas:
-        'public nature'
-        'corporation nature';
+            'sponser2 sponser3'
+            'sponser4 sponser4';
         grid-template-columns: 1fr 1fr;
     }
-    #wrap .campaign_bg .campaign .details li {position:relative; padding-bottom: 30px;}
-    #wrap .campaign_bg .campaign .details li .txt {width: 50%;}
-    #wrap .campaign_bg .campaign .details li:last-child .txt {
-        position: absolute; left: 0; bottom: 30px;
+}/* 860~1023 */
+@media screen and (min-width:1024px) {
+    #wrap .intro {padding:410px 0 100px;}
+    #wrap .intro .logo {width:32px; left:36px; top:30px;}
+    #wrap .intro h1 {margin:0 0 100px;}
+    #wrap .intro h1 span {font-size:3.13rem; font-weight:600;}
+    #wrap .container .sponsor_btn {width:238px; height:60px;}
+    #wrap .container .sponsor_btn em {font-size:1.38rem;}
+    #wrap .container .sponsor_btn::after {font-size:1rem;}
+    /* ----------------------------------------------2행 퀴즈 */
+    #wrap .quiz_bg .quiz .quiz_list {width:400px;}
+    #wrap .quiz_bg .quiz .quiz_list #quiz_frm ul li label  {
+        background-size:28px; display:block; line-height: 2;
     }
+    /* -----------------------------------------------8행 */
+    #wrap .activity_bg .activity .details {
+        grid-template-areas:
+            'public nature '
+            'corporation nature';
+        grid-template-columns:1fr 1fr;
+    }
+    #wrap .activity_bg .activity .details li {position:relative; padding-bottom:30px;}
+    #wrap .activity_bg .activity .details li .txt {width:50%;}
+    #wrap .activity_bg .activity .details li:last-child .txt {
+        position:absolute; left:0; bottom:30px;
+    }
+    /* -------------------------------------9행 */
+    #wrap .gift_bg .gift .gift_list {
+        grid-template-areas:
+            'sponser2 sponser3 sponser4';
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    #wrap .gift_bg .gift .gift_list li .photo img {transform:translateY(0);}
+}/* 1024~1249 */
+@media screen and (min-width:1250px) {
+    #wrap .intro {padding:447px 0 100px;}
+    #wrap .intro .logo {width:42px; left:61px; top:53px;}
+    #wrap .intro h1 span {font-size:4.38rem;}
+    #wrap .intro h1 span:nth-child(1) {font-weight:400;}
+    #wrap .intro h1 span:nth-child(2) {font-weight:700;}
+    #wrap .container .sponsor_btn {width:409px; height:71px;}
+    #wrap .container .sponsor_btn em {font-size:2.13rem;}
+    #wrap .container .sponsor_btn::after {font-size:2rem;}
 }/* 1250~max */
